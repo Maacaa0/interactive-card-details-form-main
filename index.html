@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+
+
+  <title>Frontend Mentor | Interactive card details form</title>
+
+
+</head>
+<body>
+  <section class="left">
+    <div class="cards-container">
+      <div class="card card-front">
+        <div class="card-logo"><img src="images/card-logo.svg" alt=""></div>
+        <div><span id="card-number-display">0000 0000 0000 0000</span></div>
+        <div class="card-bottom">
+          <span id="name-display">Jane Appleseed</span>
+          <span id="expiration-display"><span id="mmexp">00</span><span>/</span><span id="yyexp">00</span></span>
+        </div>
+      </div>
+    
+      <div class="card card-back">
+        <span id="cvc-display">000</span>
+      </div>
+    </div>
+  </section>
+  <main>
+    <form action="">
+      <!-- CARDHOLDER NAME -->
+      <p class="input-text input-name">Cardholder Name</p>
+      <input id="name" minlength="4" maxlength="30" pattern="[a-zA-Z]+" type="text" placeholder="e.g. Jane Appleseed">
+      <p class="error-msg">Can't be blank</p>
+      
+      <!-- CARD NUMBER  -->
+      <p class="input-text input-name">Card Number</p>
+      <input id="number" minlength="19" maxlength="16" pattern="([0-9]\s{3})" type="text" placeholder="e.g. 1234 5678 9123 0000">
+      <p class="error-msg">Can't be blank</p>
+      
+        <!-- EXP DATE -->
+        <div class="flex-row">
+        <div>
+          <!-- MONTH -->
+          <p class="input-text input-name">Exp. Date (MM/YY)</p>
+          <input max="12" maxlength="2" pattern="\d*" class="exp-date" id="month" type="text" placeholder="MM">
+          <!-- <p class="error-msg">Can't be blank</p> -->
+
+          <!-- YEAR -->
+          <input min="20" maxlength="2" pattern="\d*" class="exp-date" id="year" type="text" placeholder="YY">
+          <!-- <p class="error-msg">Can't be blank</p> -->
+        </div>
+
+
+          <!-- CVC -->
+        <div>
+          <p class="input-text input-name">CVC</p>
+          <input maxlength="3" pattern="\d*" id="cvc" type="text" placeholder="e.g. 123">
+          <p class="error-msg">Can't be blank</p>
+        </div>
+      </div>
+      
+      <button type="button" id="confirm-button">Confirm</button>
+    </form>
+
+<!-- Completed state start -->
+    <div class="thank-you-page">
+      <p class="check-symbol">✓</p>
+      <h1>Thank you!</h1>
+      <p class="confirm-card-text">We've added your card details</p>
+      <button type="button" id="continue-button">Continue</button>
+    </div>
+
+  </main>
+  
+  
+  
+  
+
+</body>
+</html>
