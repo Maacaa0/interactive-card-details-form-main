@@ -64,13 +64,8 @@ body {
 }
 
 #card-number-display {
-    text-decoration: none;
-    color: white;
     font-size: 1.8rem;
     letter-spacing: 3px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
 }
 
 #name-display {
