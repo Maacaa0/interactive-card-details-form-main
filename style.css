@@ -3,8 +3,6 @@
 :root {
     --Lineargradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
     --Red: hsl(0, 100%, 66%);  
-    /* inputerrors
-    (activeinputborder) */
 
     --White: hsl(0, 0%, 100%);
     --Lightgrayishviolet: hsl(270, 3%, 87%);
@@ -106,10 +104,6 @@ main {
     align-items: center;
     margin: 0 auto;
 }
-
-/* form {
-    display:none;
-} */
 
 input {
     border: 1px solid var(--Lightgrayishviolet);
