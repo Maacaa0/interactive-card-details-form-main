@@ -64,6 +64,8 @@ body {
 }
 
 #card-number-display {
+    text-decoration: none;
+    color: white;
     font-size: 1.8rem;
     letter-spacing: 3px;
 }
@@ -154,7 +156,12 @@ input::placeholder {
 }
 
 #cvc {
-    width: 12rem;
+    width: 11.3rem;
+}
+
+.month-year-container {
+    display: flex;
+    gap: 1rem;
 }
 
 /* ERROR CLASSES */
