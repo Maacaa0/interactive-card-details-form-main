@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- prevents mobile number detection / had problems on safari with card number showing as phone number -->
+  <meta name="format-detection" content="telephone=no" />
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
@@ -34,12 +37,12 @@
     <form action="">
       <!-- CARDHOLDER NAME -->
       <p class="input-text input-name">Cardholder Name</p>
-      <input id="name" minlength="4" maxlength="30" pattern="[a-zA-Z]+" type="text" placeholder="e.g. Jane Appleseed">
+      <input id="name" minlength="4" maxlength="30" type="text" placeholder="e.g. Jane Appleseed">
       <p class="error-msg">Can't be blank</p>
       
       <!-- CARD NUMBER  -->
       <p class="input-text input-name">Card Number</p>
-      <input id="number" minlength="19" maxlength="16" pattern="([0-9]\s{3})" type="text" placeholder="e.g. 1234 5678 9123 0000">
+      <input id="number" minlength="19" maxlength="16" type="text" placeholder="e.g. 1234 5678 9123 0000">
       <p class="error-msg">Can't be blank</p>
       
         <!-- EXP DATE -->
@@ -49,12 +52,12 @@
           <p class="input-text input-name">Exp. Date (MM/YY)</p>
           <div class="month-year-container">
           <div>
-          <input max="12" maxlength="2" pattern="\d*" class="exp-date" id="month" type="text" placeholder="MM">
+          <input maxlength="2" class="exp-date" id="month" type="text" placeholder="MM">
           <p class="error-msg">Can't be blank</p>
           </div>
           <!-- YEAR -->
           <div>
-          <input min="20" maxlength="2" pattern="\d*" class="exp-date" id="year" type="text" placeholder="YY">
+          <input maxlength="2" class="exp-date" id="year" type="text" placeholder="YY">
           <p class="error-msg">Can't be blank</p>
         </div>
         </div>
@@ -64,7 +67,7 @@
           <!-- CVC -->
         <div>
           <p class="input-text input-name">CVC</p>
-          <input maxlength="3" pattern="\d*" id="cvc" type="text" placeholder="e.g. 123">
+          <input maxlength="3" id="cvc" type="text" placeholder="e.g. 123">
           <p class="error-msg">Can't be blank</p>
         </div>
       </div>
@@ -82,9 +85,5 @@
 
   </main>
   
-  
-  
-  
-
 </body>
 </html>
