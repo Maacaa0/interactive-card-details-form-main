@@ -99,11 +99,20 @@ numberInput.addEventListener("input", function() {
 // EXP. MONTH INPUT
 let checkMonthConditions = false;
 mmInput.addEventListener("input", function() {
-    if (mmInput.value > 12 || !/[0-9]{2}/.test(mmInput.value) || mmInput.value === "") {
+    if (mmInput.value === "") {
+        mmInput.nextElementSibling.classList.add("add"),
+        mmInput.classList.add("error-border"),
+            mmInput.classList.remove("confirmed-border"),
+            mmInput.nextElementSibling.textContent = wrongInput[3]
+            checkMonthConditions = false; 
+    } else if (mmInput.value > 12 || !/[0-9]{2}/.test(mmInput.value) || mmInput.value === "") {
+        mmInput.nextElementSibling.classList.add("add"),
+        mmInput.nextElementSibling.textContent = wrongInput[0]
         mmInput.classList.add("error-border"),
         mmInput.classList.remove("confirmed-border"),
         checkMonthConditions = false; 
     } else {
+        mmInput.nextElementSibling.classList.remove("add"),
         mmInput.classList.remove("error-border"),
         mmInput.classList.add("confirmed-border"),
         checkMonthConditions = true;
@@ -115,13 +124,23 @@ mmInput.addEventListener("input", function() {
 let currentYear = new Date().toString().split(" ")[3].slice(2)
 let checkYearConditions = false;
 yyInput.addEventListener("input", function() {
-    if (yyInput.value < Number(currentYear) || !/[0-9]{2}/.test(yyInput.value)) {
+    if (yyInput.value === "") {
+        yyInput.nextElementSibling.classList.add("add"),
+        yyInput.classList.add("error-border"),
+            yyInput.classList.remove("confirmed-border"),
+            yyInput.nextElementSibling.textContent = wrongInput[3]
+            checkYearConditions = false; 
+    
+ } else if (yyInput.value < Number(currentYear) || !/[0-9]{2}/.test(yyInput.value)) {
+            yyInput.nextElementSibling.classList.add("add"),
+            yyInput.nextElementSibling.textContent = wrongInput[0]
             yyInput.classList.add("error-border"),
             yyInput.classList.remove("confirmed-border"),
             checkYearConditions = false; 
         } else {
             yyInput.classList.remove("error-border"),
             yyInput.classList.add("confirmed-border"),
+            yyInput.nextElementSibling.classList.remove("add")
             checkYearConditions = true;
         } 
     cardExpYY.textContent = yyInput.value
@@ -152,21 +171,17 @@ let allConditions = [checkNameConditions,checkNumberConditions,checkMonthConditi
 
 
  confirmBtn.addEventListener("click", function() {
-    if (checkNameConditions && checkNumberConditions && checkMonthConditions && checkYearConditions && checkCvcConditions)
+    if (checkNameConditions && checkNumberConditions && checkMonthConditions && checkYearConditions && checkCvcConditions){
+        allInputs.forEach(x => x.classList.remove("error-border"))
         thankYou.style.display = "flex",
         form.classList.add("remove")
-
-    })
+  } else {
+        allInputs.forEach(x => x.classList.add("error-border"))
+        alert("Check your inserted data!")
+   }
+    
+})
 
     continueBtn.addEventListener("click", function(){
         window.location.reload()
     })
-
-
-
- 
-
- 
-   
- 
-
